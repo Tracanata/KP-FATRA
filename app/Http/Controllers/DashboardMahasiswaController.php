@@ -6,8 +6,10 @@ use App\Models\User;
 use App\Models\Prestasi;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use App\Imports\MahasiswaImport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class DashboardMahasiswaController extends Controller
 {
@@ -148,5 +150,15 @@ class DashboardMahasiswaController extends Controller
         User::destroy(User::where('id', Mahasiswa::where('id', $mahasiswa->id)->value('user_id'))->value('id'));
         Mahasiswa::destroy($mahasiswa->id);
         return redirect('/dashboard/mahasiswas')->with('success', 'Data has been deleted!');
+    }
+
+    public function importexcel(Request $request){
+        $data = $request->file('file');
+
+        $namafile = $data->getClientOriginalName();
+        $data->move('MahasiswaData', $namafile);
+
+        Excel::import(new MahasiswaImport, \public_path('/MahasiswaData/'.$namafile));
+        return redirect('/dashboard/mahasiswas')->with('success', 'Data dan Akun Berhasil Ditambahkan');
     }
 }

@@ -4,7 +4,7 @@
     <h1 class="mb-5 text-center">{{$title}}</h1>
     
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-between">
             @foreach($prestasis as $prestasi)
                 <div class="card mx-4 mb-5" style="width: 12rem;">
                     @if($prestasi->Mahasiswa->image)

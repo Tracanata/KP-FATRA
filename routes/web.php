@@ -1,16 +1,19 @@
 <?php
 
+use App\Exports\WorkExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LulusanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\DashboardMahasiswaController;
-use App\Http\Controllers\DashboardOrtusController;
-use App\Http\Controllers\DashboardPrestasiController;
-use App\Http\Controllers\DashboardProfilController;
 use App\Http\Controllers\DashboardWorkController;
+use App\Http\Controllers\DashboardOrtusController;
+use App\Http\Controllers\DashboardProfilController;
+use App\Http\Controllers\DashboardLaporanController;
+use App\Http\Controllers\DashboardPrestasiController;
+use App\Http\Controllers\DashboardMahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +47,11 @@ Route::resource('/dashboard/profils', DashboardProfilController::class)->middlew
 Route::resource('/dashboard/ortus', DashboardOrtusController::class)->middleware('mahasiswa');
 Route::resource('/dashboard/works', DashboardWorkController::class)->middleware('mahasiswa');
 Route::resource('/dashboard/prestasis', DashboardPrestasiController::class)->middleware('mahasiswa');
+Route::get('/dashboard/laporan', [DashboardLaporanController::class, 'index'])->middleware('auth');
+
+// Export Excell
+Route::get('/exportwork', function(){
+    return Excel::download(new WorkExport, 'Pekerjaan Lulusan.xlsx');})->middleware('staff');
+
+// Import Excell
+Route::post('/importexcel', [DashboardMahasiswaController::class, 'importexcel'])->name('importexcel')->middleware('auth');
