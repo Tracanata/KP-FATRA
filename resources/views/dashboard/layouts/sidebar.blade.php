@@ -3,8 +3,7 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
-              <span data-feather="home" class="align-text-bottom"></span>
-              Dashboard
+              <h6><span data-feather="home" class="align-text-bottom"></span>Dashboard</h6>
             </a>
           </li>
         </ul>
@@ -12,8 +11,7 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/admins*') ? 'active' : '' }}" href="/dashboard/admins">
-              <span data-feather="file-text"></span>
-              Data User
+              <h6><span data-feather="file-text"></span>Data User</h6>
             </a>
           </li>
         </ul>
@@ -22,14 +20,12 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/mahasiswas*') ? 'active' : '' }}" href="/dashboard/mahasiswas">
-              <span data-feather="file-text"></span>
-              Data Mahasiswa
+              <h6><span data-feather="file-text"></span>Data Mahasiswa</h6>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/laporan*') ? 'active' : '' }}" href="/dashboard/laporan">
-              <span data-feather="file-text"></span>
-              Buat Laporan
+              <h6><span data-feather="file-text"></span>Buat Laporan</h6>
             </a>
           </li>
         </ul>
@@ -38,35 +34,30 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/profils*') ? 'active' : '' }}" href="/dashboard/profils">
-              <span data-feather="user"></span>
-              Profile
+              <h6><span data-feather="user"></span>Profile</h6>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/prestasis*') ? 'active' : '' }}" href="/dashboard/prestasis">
-              <span data-feather="award"></span>
-              Prestasi
+              <h6><span data-feather="award"></span>Prestasi</h6>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/ortus*') ? 'active' : '' }}" href="/dashboard/ortus">
-              <span data-feather="users"></span>
-              Data Orang Tua
+              <h6><span data-feather="users"></span>Data Orang Tua</h6>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Request::is('dashboard/works*') ? 'active' : '' }}" href="/dashboard/works">
-              <span data-feather="user"></span>
-              Pekerjaan
+              <h6><span data-feather="linkedin"></span>Pekerjaan</h6>
             </a>
           </li>
         </ul>
         @endcan
         <ul class="nav flex-column pt-4">
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('dashboard/passwords*') ? 'active' : '' }}" aria-current="page" href="/dashboard/passwords">
-              <span data-feather="key" class="align-text-bottom"></span>
-              Ubah Password
+            <a class="nav-link {{ Request::is('dashboard/password*') ? 'active' : '' }}" aria-current="page" href="/dashboard/password">
+              <h6><span data-feather="key" class="align-text-bottom"></span>Ubah Password</h6>
             </a>
           </li>
         </ul>

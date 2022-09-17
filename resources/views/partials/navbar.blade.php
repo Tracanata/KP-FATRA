@@ -13,7 +13,7 @@
                 <a class="nav-link {{ ($active === "home") ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ ($active === "mhs") ? 'active' : '' }}" href="/promahasiswas">Mahasiswa</a>
+                <a class="nav-link {{ ($active === "mhs") ? 'active' : '' }}" href="/promahasiswas">Prestasi Mahasiswa</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ ($active === "lulusan") ? 'active' : '' }}" href="/prolulusans">Lulusan</a>

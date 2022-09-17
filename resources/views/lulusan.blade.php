@@ -52,9 +52,19 @@
                         <tr>
                             <td class="py-2 px-2 idd">Tempat Kerja</td>
                             <td>: </td>
-                            <td class="p-2 idd">{{ $mahasiswa->tempat_kerja }}</td>
+                            @if($mahasiswa->email)
+                                <td class="p-2 idd">{{ $mahasiswa->tempat_kerja }}</td>
+                            @else
+                                <td class="p-2 idd"><b>-</b></td>
+                            @endif
                         </tr>
                     </table>
+                    <h6 class="py-2 px-2 idd">Prestasi :</h6>
+                    @foreach($prestasis as $prestasi)
+                        <ul>
+                            <li>{{$prestasi->nama}} ({{ $prestasi->waktu }})</li>
+                        </ul>
+                    @endforeach
                 </div>
             </div>
         </div>

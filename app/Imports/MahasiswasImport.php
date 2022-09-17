@@ -7,8 +7,7 @@ use App\Models\Mahasiswa;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-
-class MahasiswaImport implements \Maatwebsite\Excel\Concerns\WithHeadingRow, \Maatwebsite\Excel\Concerns\ToModel
+class MahasiswasImport implements WithHeadingRow, ToModel
 {
     /**
     * @param array $row
@@ -19,19 +18,18 @@ class MahasiswaImport implements \Maatwebsite\Excel\Concerns\WithHeadingRow, \Ma
     {
         User::create([
             'username' => $row['npm'],
-            'nama'=> $row['name'],
+            'name' => $row['nama'],
             'roles' => 'mahasiswa',
-            'password' => bcrypt('12345')
+            'password'=> bcrypt('12345')
         ]);
-
         $user = User::where('username', $row['npm'])->value('id');
         Mahasiswa::create([
             'npm' => $row['npm'],
-            'nama' => $row['name'],
+            'nama' => $row['nama'],
             'jk' => $row['jenis_kelamin'],
             'prodi' => $row['prodi'],
             'angkatan' => $row['angkatan'],
-            'kelas' => $row['kelas'],
+            'kelas' =>$row['kelas'],
             'status_aktif' => $row['status_aktif'],
             'user_id' => $user
         ]);

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('container')
     <h1 class="mb-5 text-center">{{$title}}</h1>
-    <div class="row">
+    <div class="row justify-content-center">
         @foreach($mahasiswas as $mahasiswa)
             <div class="card mx-3" style="width: 12rem;">
                 @if($mahasiswa->image)

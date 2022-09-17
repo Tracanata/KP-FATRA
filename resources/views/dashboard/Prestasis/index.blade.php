@@ -18,7 +18,7 @@
           <thead>
             <tr>
               <th scope="col">No</th>
-              <th scope="col">Nama</th>
+              <th scope="col">Nama Kegiatan</th>
               <th scope="col">Tempat</th>
               <th scope="col">Waktu</th>
               <th scope="col">Tingkat</th>

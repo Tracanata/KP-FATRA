@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mahasiswa;
+use App\Models\Prestasi;
 use Illuminate\Http\Request;
 
 class LulusanController extends Controller
@@ -19,7 +20,8 @@ class LulusanController extends Controller
         return view('lulusan',[
             "title" => "single post",
             "active" => 'lulusan',
-            "mahasiswa" => $mahasiswa
+            "mahasiswa" => $mahasiswa,
+            "prestasis" => Prestasi::where('mahasiswa_id',$mahasiswa->id)->get()
         ]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Exports\WorkExport;
+use App\Http\Controllers\DashboardAdminController;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -14,6 +15,9 @@ use App\Http\Controllers\DashboardProfilController;
 use App\Http\Controllers\DashboardLaporanController;
 use App\Http\Controllers\DashboardPrestasiController;
 use App\Http\Controllers\DashboardMahasiswaController;
+use App\Http\Controllers\ImportController;
+use App\Http\Controllers\PdfController;
+use App\Http\Controllers\UbahPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,16 +46,24 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::resource('/dashboard/admins', DashboardAdminController::class)->middleware('admin');
 Route::resource('/dashboard/mahasiswas', DashboardMahasiswaController::class)->middleware('staff');
 Route::resource('/dashboard/profils', DashboardProfilController::class)->middleware('mahasiswa');
 Route::resource('/dashboard/ortus', DashboardOrtusController::class)->middleware('mahasiswa');
 Route::resource('/dashboard/works', DashboardWorkController::class)->middleware('mahasiswa');
 Route::resource('/dashboard/prestasis', DashboardPrestasiController::class)->middleware('mahasiswa');
-Route::get('/dashboard/laporan', [DashboardLaporanController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/laporan', [DashboardLaporanController::class, 'index'])->middleware('staff');
+Route::get('/dashboard/password', [UbahPasswordController::class,'edit'])->name('password.edit')->middleware('auth');
+Route::put('/dashboard/password', [UbahPasswordController::class,'update'])->name('password.update')->middleware('auth');
 
 // Export Excell
 Route::get('/exportwork', function(){
     return Excel::download(new WorkExport, 'Pekerjaan Lulusan.xlsx');})->middleware('staff');
 
 // Import Excell
-Route::post('/importexcel', [DashboardMahasiswaController::class, 'importexcel'])->name('importexcel')->middleware('auth');
+// Route::get('/dashboard/import', [ImportController::class, 'import'])->middleware('staff');
+Route::post('/dashboard/import', [ImportController::class,'store'])->name('import.store')->middleware('staff');
+
+// Export PDF
+
+

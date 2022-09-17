@@ -88,12 +88,31 @@
             @endif
         </div>    
     </div>
-    <div class="card mb-4">
+    <div class="card mb-5">
         <div class="justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-2">
           <h2 class="card-title">Prestasi</h2>
         </div>
-        @foreach($prestasis as $prestasi)
-            <p class="card-text"><b>-</b>{{$prestasi->nama}}</p>
-        @endforeach
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">No</th>
+              <th scope="col">Nama Kegiatan</th>
+              <th scope="col">Tempat Kegiatan</th>
+              <th scope="col">Waktu Kegiatan</th>
+              <th scope="col">Bukti Kegiatan</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($prestasis as $prestasi)
+              <tr>
+                <th scope="col">{{ $loop->iteration }}</th>
+                <td>{{ $prestasi->nama}}</td>
+                <td>{{ $prestasi->tempat}}</td>
+                <td>{{ $prestasi->waktu}}</td>
+                <td>lorem</td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
     </div>
 @endsection
