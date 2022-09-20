@@ -12,6 +12,24 @@
     </div>
     @endif
 
+    <!-- <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <form action="#"> -->
+                <!-- @if (request('category'))
+                    <input type="hidden" name="category" value="{{ request('category') }}">
+                @endif
+                @if (request('author'))
+                    <input type="hidden" name="author" value="{{ request('author') }}">
+                @endif -->
+                <!-- <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}">
+                <button class="btn btn-primary text-light" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+      </div> -->
+
+
     <div class="table-responsive col-lg-10">
         <a href="/dashboard/mahasiswas/create" class="btn btn-primary mb-3">Tambah Data Mahasiswa</a>
         <!-- <a href="/dashboard/import/" class="btn btn-warning mb-3">Import</a> -->
@@ -45,6 +63,13 @@
           </div>
         </div>
       </div>
+
+      <form action="/dashboard/mahasiswas">
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search.." name="search" value="{{ request('search') }}">
+        <button class="btn btn-primary text-light" type="submit">Search</button>
+        </div>
+      </form>
 
       
         <table class="table table-striped table-sm">
@@ -86,4 +111,5 @@
             </tbody>
           </table>
       </div>
+      {{ $mahasiswas->links() }}
 @endsection 

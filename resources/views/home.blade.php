@@ -22,4 +22,31 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+
+<div class="container mt-3 mb-5">
+    <div class="card">
+        <div class="row justify-content-center mt-5 mb-5">
+            <div class="card bg-primary mx-3" style="width: 20rem;">
+                <div class="card-body">
+                    <a href="/promahasiswas" class="text-decoration-none text-white">
+                        <div class="text-center">
+                            <h1><i class="bi bi-award"></i></h1>
+                            <h3 class="card-title">Prestasi Mahasiswa</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card bg-success mx-3" style="width: 20rem;">
+                <div class="card-body">
+                    <a href="/prolulusan" class="text-decoration-none text-white">
+                        <div class="text-center">
+                            <h1><i class="bi bi-person-check-fill"></i></h1>
+                            <h3 class="card-title">Lulusan</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

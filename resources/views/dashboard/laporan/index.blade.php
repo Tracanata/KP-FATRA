@@ -7,29 +7,29 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="card mx-5 bg-info" style="width: 15rem; height: 12rem;">
+            <div class="card bg-primary mx-3" style="width: 20rem;">
                 <div class="card-body">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <div class="text-justify">
-                            <h4>Recap Data Orang Tua Mahasiswa</h4>
+                    <a href="/promahasiswas" class="text-decoration-none text-white">
+                        <div class="text-center">
+                            <h3 class="card-title">Recap Data Orang Tua Mahasiswa</h3>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="card mx-5 bg-secondary" style="width: 15rem; height: 12rem;">
+            <div class="card bg-warning mx-3" style="width: 20rem;">
                 <div class="card-body">
-                    <a href="#" class="text-decoration-none text-dark">
-                        <div class="text-justify">
-                            <h4>Recap Data Prestasi Siswa</h4>
+                    <a href="/promahasiswas" class="text-decoration-none text-white">
+                        <div class="text-center">
+                            <h3 class="card-title">Recap Data Prestasi Mahasiswa</h3>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="card mx-5 bg-success" style="width: 15rem; height: 12rem;">
+            <div class="card bg-success mx-3" style="width: 20rem;">
                 <div class="card-body">
-                    <a href="/exportwork" class="text-decoration-none text-dark">
-                        <div class="text-justify">
-                            <h4>Recap Data Pekerjaan Lulusan</h4>
+                    <a href="/exportwork" class="text-decoration-none text-white">
+                        <div class="text-center">
+                            <h3 class="card-title">Recap Data Pekerjaan Lulusan</h3>
                         </div>
                     </a>
                 </div>

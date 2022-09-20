@@ -19,32 +19,34 @@
     </div>
     @endif
 
-    <div class="col-lg-8">
-        <form action="{{ route('password.update') }}" method="post">
-            @method('put')
-            @csrf
-            <div class="mb-5">
-                <label for="current_password" class="form-label">Current Password</label>
-                <input type="password" class="form-control" name="current_password" id="current_password">
-                @error('current_password')
-                    {{ $message }}
-                @enderror
-            </div>
-            <div class="mb-5">
-                <label for="password" class="form-label">New Password</label>
-                <input type="password" class="form-control" name="password" id="password">
-                @error('password')
-                    {{ $message }}
-                @enderror
-            </div>
-            <div class="mb-3">
-                <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
-                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
-                @error('password_confirmation')
-                    {{ $message }}
-                @enderror
-            </div>
-            <button type="submit" class="btn btn-primary mb-3">Update</button>
-        </form>
+    <div class="card col-lg-10">
+        <div class="col-lg-8">
+            <form action="{{ route('password.update') }}" method="post">
+                @method('put')
+                @csrf
+                <div class="mb-3">
+                    <label for="current_password" class="form-label">Current Password</label>
+                    <input type="password" class="form-control" name="current_password" id="current_password">
+                    @error('current_password')
+                        {{ $message }}
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">New Password</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                    @error('password')
+                        {{ $message }}
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation">
+                    @error('password_confirmation')
+                        {{ $message }}
+                    @enderror
+                </div>
+                <button type="submit" class="btn btn-primary mb-3">Update</button>
+            </form>
+        </div>
     </div>
 @endsection 

@@ -18,8 +18,14 @@ class DashboardMahasiswaController extends Controller
      */
     public function index()
     {
+        $mhs = Mahasiswa::latest();
+
+        if(request('search')){
+            $mhs->where('nama', 'like', '%' . request('search') . '%');
+        }
+
         return view('dashboard.mahasiswas.index',[
-            'mahasiswas' => Mahasiswa::all()
+            'mahasiswas' => $mhs->paginate(6)
         ]);
 
     }
